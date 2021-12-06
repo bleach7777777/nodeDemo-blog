@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>基础博客实战</title>
+</head>
+
+<body>
+  <form action="/article/listEdit" method="post">
+    <input type="text" name="articleId" value="<%= article.articleId %>" hidden>
+    <input type="text" name="title" value="<%= article.title %>">;
+    <textarea name="content" id="content" cols="30" rows="10"><%= article.content%></textarea>
+    <button type="submit">修改</button>
+  </form>
+</body>
+
+</html>

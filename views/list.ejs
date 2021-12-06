@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>基础博客实战</title>
+</head>
+
+<body>
+  <% articleList.map(function(item, index) { %>
+  <div class="row">
+    <p>
+      <span><%= index+1 %></span>
+      <span><%= item.title %></span>
+    </p>
+    <p><%= item.content %></p>
+    <div style="display: flex;">
+      <form action="/article/listEdit" method="get">
+        <input type="text" name="articleId" value="<%= item.articleId %>" hidden>
+        <button type="submit">编辑</button>
+      </form>
+      <form action="/article/listDelete" method="post">
+        <input type="text" name="articleId" value="<%= item.articleId %>" hidden>
+        <button type="submit">删除</button>
+      </form>
+    </div>
+  </div>
+  <% }) %>
+</body>
+
+</html>
